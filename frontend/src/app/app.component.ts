@@ -9,4 +9,7 @@ import {environment} from "../environments/environment";
 })
 export class AppComponent {
   title = "What's for dinner?";
+  constructor(private auToken: Angular2TokenService) {
+    this.auToken.init(environment.token_auth_config);
+  }
 }
