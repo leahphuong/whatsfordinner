@@ -7,11 +7,13 @@ import { MaterializeModule } from 'angular2-materialize';
 import { Angular2TokenService } from 'angular2-token';
 import { HttpClientModule }    from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
