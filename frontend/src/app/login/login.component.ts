@@ -7,7 +7,7 @@ import {MaterializeAction} from "angular2-materialize";
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-
+  @Input('auth-mode') authMode: 'login' | 'register' = 'login';
   constructor() { }
 
   ngOnInit() {
