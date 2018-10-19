@@ -10,8 +10,10 @@ export class LoginComponent implements OnInit {
   @Input('auth-mode') authMode: 'login' | 'register' = 'login';
   modalActions = new EventEmitter<string|MaterializeAction>();
   constructor() { }
-
+  openDialog(mode: 'login' | 'register' = 'login') {
+    this.authMode = mode;
+    this.modalActions.emit({action:"modal", params:['open']});
+  }
   ngOnInit() {
   }
-
 }
