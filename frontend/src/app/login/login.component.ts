@@ -16,4 +16,6 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
   }
+  isLoginMode() {return this.authMode == 'login'};
+  isRegisterMode() {return this.authMode == 'register'};
 }
