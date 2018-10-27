@@ -19,5 +19,17 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSignInSubmit(){
+    this.tokenAuthSerivce.signIn(this.signInUser).subscribe(
+      res => {
+        if(res.status == 200){
+          this.onFormResult.emit({signIn: true, res});
+        }
+      },
+      err => {
+        console.log('error:', err);
+        this.onFormResult.emit({signIn: false, err});
+      }
+    )
+  }
 }
