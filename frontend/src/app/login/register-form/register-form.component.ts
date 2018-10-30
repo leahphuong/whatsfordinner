@@ -8,6 +8,12 @@ import {Angular2TokenService} from "angular2-token";
 })
 export class RegisterFormComponent implements OnInit {
 
+  signUpUser = {
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+  };
+
   constructor() { }
 
   ngOnInit() {
