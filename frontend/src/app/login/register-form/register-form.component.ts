@@ -14,7 +14,8 @@ export class RegisterFormComponent implements OnInit {
     passwordConfirmation: ''
   };
 
-  constructor() { }
+  @Output() onFormResult = new EventEmitter<any>();
+  constructor(private tokenAuthSerivce:Angular2TokenService) { }
 
   ngOnInit() {
   }
