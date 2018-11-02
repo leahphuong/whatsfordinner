@@ -12,6 +12,14 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  onLoginFormResult(e){
+    if(e.signedIn)
+      this.closeDialog();
+    else{
+      alert(e.err.json().errors[0]);
+    }
+  }
+
   openDialog(mode: 'login' | 'register' = 'login') {
     this.authMode = mode;
     this.modalActions.emit({action:"modal", params:['open']});
@@ -20,7 +28,7 @@ export class LoginComponent implements OnInit {
   closeDialog(){
     this.modalActions.emit({action:"modal", params:['close']});
   }
-  
+
   ngOnInit() {
   }
   isLoginMode() {return this.authMode == 'login'};
