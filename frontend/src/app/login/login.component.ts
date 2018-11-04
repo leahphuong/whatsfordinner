@@ -20,6 +20,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  onRegisterFormResult(e){
+    if(e.signedUp) 
+      this.closeDialog();
+    else{
+      alert(e.err.json().errors.full_messages[0]);
+    }
+
+  }
+
   openDialog(mode: 'login' | 'register' = 'login') {
     this.authMode = mode;
     this.modalActions.emit({action:"modal", params:['open']});
