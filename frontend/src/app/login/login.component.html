@@ -9,6 +9,11 @@
       <div class="row">
         Current mode: {{authMode}}
       </div>
+      <div class="row">
+        <span *ngIf="isLoginMode()">
+          Need an account? <a (click)="authMode='register'">Click here to register.</a>
+        </span>
+      </div>
     </div>
   </div>
 </div>
